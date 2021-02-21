@@ -1,0 +1,112 @@
+$titleColor: #1A2533;
+$textColor: #6B85A3;
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  width: 400px;
+  height: 590px;
+  border: 1px solid #E8F1FB;
+  margin: auto;
+  background-color: #fff;
+
+  &__header {
+    padding: 21px 24px 18px 29px;
+    border-bottom: 1px solid #E8F1FB;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    color: $titleColor;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 12px;
+    color: $textColor;
+  }
+
+  &__body {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 470px;
+
+    .dragarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        color: #324964;
+      }
+
+      span {
+        display: block;
+        color: $textColor;
+        margin: 8px 0 4px;
+      }
+
+      &.dragged {
+        background-color: #F5F9FF;
+        border: 1px dashed #4991E5;
+        cursor: grab;
+      }
+
+      &__drop {
+        border-radius: 50%;
+        border: 1px solid #D1E3F8;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &.loading::before {
+          position: absolute;
+          content: '';
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 50%;
+          border-left: 2px solid #4991E5;
+          border-bottom: 2px solid #4991E5;
+          border-right: 2px solid #4991E5;
+          animation: spin 2s linear infinite;
+        }
+      }
+
+      &__output {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      &__input {
+        display: none;
+      }
+
+      &__label {
+        color: #4991E5;
+        cursor: pointer;
+      }
+    }
+  }
+}
