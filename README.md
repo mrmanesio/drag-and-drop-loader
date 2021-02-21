@@ -1,6 +1,7 @@
 Добрый день, читающий.
 
-Это тестовое задание для компании Lanp
+Это тестовое задание для компании Lanp.
+
 Был задан макет в фигме 
 https://www.figma.com/file/YJWP1ttCqm7DHzEJfx4DZh/Frontend-Test-task?node-id=1%3A21
 
